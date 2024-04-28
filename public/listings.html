@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoomOnTheGo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+  <div class="main">
+    <div class="main-page">
+      <div class="nav">
+        <div class="nav-links-container">
+          <button onclick="toggleSidebar()" style="border: none; background-color: rgba(250, 237, 0, 0)">
+            <span class="material-symbols-outlined" style="font-size: 60px">menu</span>
+          </button>
+          <img src="logo-3.png" alt="Logo" width="256" height="64" style="margin-right: 6px" />
+          <!-- <h2 class="logo">Logo</h2> -->
+          <nav class="navigation">
+            <div class="navi-wrapper">
+              <a href="index.html">Home</a>
+              <a href="listings.html">All Listings</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <hr />
+      <div class="content">
+        <div class="sidebar closed">
+          <div class="sidebar-content">
+            <h3>Filter:</h3>
+            <input type="text" />
+            <button>
+              <span class="material-symbols-outlined">search</span>
+            </button>
+            <!-- <p>Filter Deez nutsnadflkdsalfkhfdlkj</p> -->
+          </div>
+        </div>
+        <div class="main-content">
+          <h1 class="heading-1">All Listings</h1>
+          <div class="listings-container">
+            <div class="listing">
+              <a href="room-1.html" class="listing-link">
+                <img class="listing-image" src="room-1.webp" />
+                <p class="listing-text">Pink Forest Retreat</p>
+                <p class="listing-text">₹1,500/night</p>
+              </a>
+            </div>
+            <div class="listing">
+              <a href="room-2.html" class="listing-link">
+                <img class="listing-image" src="room-2.webp" />
+                <p class="listing-text">Mountain Vista Room</p>
+                <p class="listing-text">₹1,700/night</p>
+              </a>
+            </div>
+            <div class="listing">
+              <a href="room-3.html" class="listing-link">
+                <img class="listing-image" src="room-3.webp" />
+                <p class="listing-text">Coastal Breeze Room</p>
+                <p class="listing-text">₹1,200/night</p>
+              </a>
+            </div>
+            <div class="listing">
+              <a href="room-4.html" class="listing-link">
+                <img class="listing-image" src="room-4.webp" />
+                <p class="listing-text">Island Oasis Room</p>
+                <p class="listing-text">₹1,900/night</p>
+              </a>
+            </div>
+            <div class="listing">
+              <a href="room-5.html" class="listing-link">
+                <img class="listing-image" src="room-5.webp" />
+                <p class="listing-text">Urban Elegance Room</p>
+                <p class="listing-text">₹1,100/night</p>
+              </a>
+            </div>
+            <div class="listing">
+              <a href="room-6.html" class="listing-link">
+                <img class="listing-image" src="room-6.webp" />
+                <p class="listing-text">Opulent Haven Room</p>
+                <p class="listing-text">₹2,500/night</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.querySelector(".sidebar");
+      sidebar.classList.toggle("closed");
+    }
+  </script>
+</body>
+
+</html>

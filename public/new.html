@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a new listing</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            background-color: rgb(248, 238, 184);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 0px 0px 8px 8px;
+        }
+
+        .logo img {
+            width: 300px;
+            height: 70px;
+            margin-right: 6px;
+            background-color: rgba(255, 136, 1, 0.0);
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            margin-right: 150px;
+            float: right;
+        }
+
+        .navigation a {
+            position: relative;
+            font-size: 1.2rem;
+            color: black;
+            text-decoration: none;
+            font-weight: 450;
+            margin-left: 20px;
+            padding: 10px;
+        }
+
+        .navigation a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background: black;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: transform 0.5s;
+        }
+
+        .navigation a:hover::after {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 140px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo-3.png" alt="Logo" />
+        </div>
+        <nav class="navigation">
+            <a href="/">Home</a>
+            <a href="/listings">All Listings</a>
+            <a href="/listings/new">New Listing</a>
+        </nav>
+    </header>
+    <!-- <br> -->
+    <h1>Create a New Listing</h1>
+    <form action="/listings" method="POST">
+        <input type="text" name="listing[title]" placeholder="Enter the title"><br><br>
+        <textarea name="listing[description]" placeholder="Enter the description"></textarea><br><br>
+        <input type="text" name="listing[image]" placeholder="Enter the image URL/LINK"><br><br>
+        <input type="number" name="listing[price]" placeholder="Enter price"><br><br>
+        <input type="text" name="listing[country]" placeholder="Enter country"><br><br>
+        <input type="text" name="listing[location]" placeholder="Enter location"><br><br>
+        <input type="submit" value="Add" class="button">
+    </form>
+</body>
+
+</html>

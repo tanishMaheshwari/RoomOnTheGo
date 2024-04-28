@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomOnTheGO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "poppins", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url("bg-4.webp");
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 0px 0px 8px 8px;
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: black;
+            user-select: none;
+        }
+
+        .navigation {
+            margin-right: 20px;
+        }
+
+        .navigation a {
+            font-size: 1.2rem;
+            color: black;
+            text-decoration: none;
+            font-weight: 450;
+            margin-left: 40px;
+            position: relative;
+        }
+
+        .navigation a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background: black;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: transform 0.5s;
+        }
+
+        .navigation a:hover::after {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        .main {
+            margin-top: 160px;
+            text-align: center;
+        }
+
+        .main h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .listings-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
+            justify-content: center;
+            padding: 0 20px;
+        }
+
+        .listing {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .listing img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .listing-link {
+            text-decoration: none;
+            color: black;
+        }
+
+        .listing-link:hover {
+            text-decoration: underline;
+        }
+
+        .listing-image:hover {
+            width: 330px;
+            height: 247.5px;
+            transition: all 0.2s linear;
+        }
+
+        .listing-image:not(:hover) {
+            width: 300px;
+            height: 225px;
+            transition: all 0.2s linear;
+        }
+
+
+        .listing-image {
+            border: 5px solid rgb(248, 238, 184);
+            border-radius: 16px;
+            width: 300px;
+            height: 225px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo-3.png" alt="Logo" width="300" height="70"
+                style="margin-right: 6px; background-color: rgba(255, 136, 1, 0.0);" />
+        </div>
+        <nav class="navigation">
+            <a href="/">Home</a>
+            <a href="/listings">All Listings</a>
+            <a href="/listings/new">New Listing</a>
+        </nav>
+    </header>
+    <div class="main">
+        <h1>All Listings</h1>
+        <div class="listings-container">
+            <% for (let listing of alllisting) { %>
+                <div class="listing">
+                    <a href="/listings/<%= listing.id %>" class="listing-link">
+                        <script>console.log(`<%= listing.image.url %>`);</script>
+                        <img src="<%= listing.image.url %>" alt="<%= listing.title %>" class="listing-image" />
+                        <p>
+                            <%= listing.title %>
+                        </p>
+                        <p>
+                            <%= listing.price %>
+                        </p>
+                    </a>
+                </div>
+                <% } %>
+        </div>
+    </div>
+</body>
+
+</html>

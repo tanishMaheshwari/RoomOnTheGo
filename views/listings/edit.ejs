@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomOnTheGO</title>
+    <style>
+        /* General page styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ccbd98;
+            /* Light beige background */
+        }
+
+        /* Header styling */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px;
+            background-color: #948769;
+            /* Darker beige for contrast */
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+        }
+
+        .logo img {
+            width: 200px;
+            height: auto;
+        }
+
+        /* Navigation links styling */
+        .navigation {
+            display: flex;
+            align-items: center;
+            margin-right: 80px;
+        }
+
+        .navigation a {
+            font-size: 1.2rem;
+            color: #ccbd98;
+            /* Matching the body background */
+            text-decoration: none;
+            font-weight: 450;
+            margin-left: 40px;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .navigation a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background: #ccbd98;
+            /* Bar color matches the body background */
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .navigation a:hover::after {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        /* Main heading */
+        h3 {
+            margin: 100px auto 30px;
+            text-align: center;
+            font-size: 1.8rem;
+            color: #333;
+            /* Dark text for readability */
+        }
+
+        /* Form styling */
+        form {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            /* White background for clarity */
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Input fields */
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Button styling */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../logo-3.png" alt="Logo">
+        </div>
+        <nav class="navigation">
+            <a href="/">Home</a>
+            <a href="/listings">All Listings</a>
+            <a href="/listings/new">New Listing</a>
+        </nav>
+    </header>
+    <h3>Edit your listing!</h3>
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="listing[title]" value="<%= listing.title %>" placeholder="Title"><br><br>
+        <label for="description">Description:</label>
+        <textarea id="description" name="listing[description]"
+            placeholder="Description"><%= listing.description %></textarea><br><br>
+        <label for="image">Image URL:</label>
+        <input type="text" id="image" name="listing[image]" value="<%= listing.image %>"
+            placeholder="Image URL"><br><br>
+        <label for="price">Price:</label>
+        <input type of="number" id="price" name="listing[price]" value="<%= listing.price %>"
+            placeholder="Price"><br><br>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="listing[country]" value="<%= listing.country %>"
+            placeholder="Country"><br><br>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="listing[location]" value="<%= listing.location %>"
+            placeholder="Location"><br><br>
+        <button>Edit</button>
+    </form>
+</body>
+
+</html>

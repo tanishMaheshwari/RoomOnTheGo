@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a new listing</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            background-color: rgb(248, 238, 184);
+        }
+
+        .main {
+            display: flex;
+        }
+
+        .main-page {
+            width: 100%;
+        }
+
+        .nav {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .nav-links-container {
+            display: flex;
+        }
+
+        .nav-links {
+            padding-left: 15px;
+            margin-top: 28px;
+            text-decoration: none;
+            font-weight: 450;
+            color: black;
+        }
+
+        .nav-links:link {
+            color: black;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background: black;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: transform 0.5s;
+        }
+
+        .nav-links:visited {
+            color: rgb(78, 78, 78);
+        }
+
+        .nav-links a:hover::after {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="/img/logo-3.png" alt="Logo" width="256" height="64" style="margin-right: 6px" />
+    <nav class="navigation">
+        <div class="navi-wrapper">
+            <a href="/">Home</a>
+            <a href="/listings">All Listings</a>
+            <a href="/listings/new">New Listing</a>
+        </div>
+    </nav>
+    <h3>Create a new listing!</h3>
+    <form action="/listings" method="POST">
+        <input type="text" name="listing[title]" placeholder="Enter the title"><br><br>
+        <textarea name="listing[description]" placeholder="Enter the description"></textarea><br><br>
+        <input type="text" name="listing[image]" placeholder="Enter the image URL/LINK"><br><br>
+        <input type="number" name="listing[price]" placeholder="Enter price"><br><br>
+        <input type="text" name="listing[country]" placeholder="Enter country"><br><br>
+        <input type="text" name="listing[location]" placeholder="Enter location"><br><br>
+        <input type="submit" value="Add" class="button">
+    </form>
+</body>
+
+</html>
