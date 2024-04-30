@@ -17,12 +17,13 @@
             box-sizing: border-box;
             font-family: "Roboto";
             font-size: large;
-
         }
 
         body {
-            background-color: #d2c098;
+            background-color: #f4e8d8;
+            /* Lighter and more vibrant tone */
             padding-top: 80px;
+            color: #3a3a3c;
         }
 
         header {
@@ -83,14 +84,18 @@
         }
 
         .listing-image {
-            max-width: 500px;
+            max-width: 600px;
+            /* Slightly larger image */
             display: block;
-            margin: 20px auto;
+            margin: 40px auto;
+            /* Increased margin for centering */
         }
 
         ul {
             list-style-type: none;
             padding: 20px;
+            text-align: center;
+            /* Center-aligned text */
         }
 
         li {
@@ -98,7 +103,8 @@
         }
 
         button {
-            background-color: #ff0000;
+            background-color: #7a674e;
+            /* Matched to background scheme */
             color: #fff;
             border: none;
             padding: 12px 24px;
@@ -108,7 +114,8 @@
         }
 
         button:hover {
-            background-color: #7a674e;
+            background-color: #946f51;
+            /* Slightly lighter for hover effect */
             transform: scale(1.1);
         }
 
@@ -133,10 +140,8 @@
             </ul>
         </nav>
     </header>
-    <h3 style="margin-top: 50px;">Listing Details:</h3>
     <ul>
         <img src="<%= listing.image.url %>" alt="Listing Image" class="listing-image" />
-        </li>
         <li><strong>Title:</strong>
             <%= listing.title %>
         </li>
@@ -158,4 +163,4 @@
     </form>
 </body>
 
-</html
+</html>
