@@ -4,8 +4,6 @@
   box-sizing: border-box;
   font-family: "Roboto";
   font-size: large;
-
-  /* font-family: "poppins", sans-serif; */
 }
 body {
   display: flex;

@@ -18,20 +18,17 @@
             font-family: "Roboto";
             font-size: large;
 
-            /* font-family: "poppins", sans-serif; */
         }
 
         body {
             background-color: #d2c098;
             padding-top: 80px;
-            /* Adjusted for larger header */
         }
 
         header {
             background-color: rgba(0, 0, 0, 0.2);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 15px 50px;
-            /* Increased padding */
             position: fixed;
             top: 0;
             left: 0;
@@ -83,16 +80,12 @@
             max-width: 100%;
             height: auto;
             border-radius: 10px;
-            /* More pronounced rounded corners */
         }
 
         .listing-image {
             max-width: 500px;
-            /* Restrict size to be more reasonable */
             display: block;
-            /* Ensures it doesn't exceed its container */
             margin: 20px auto;
-            /* Center align */
         }
 
         ul {
@@ -142,7 +135,6 @@
     </header>
     <h3 style="margin-top: 50px;">Listing Details:</h3>
     <ul>
-        <!-- <li><strong>Image:</strong> -->
         <img src="<%= listing.image.url %>" alt="Listing Image" class="listing-image" />
         </li>
         <li><strong>Title:</strong>
