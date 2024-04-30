@@ -2,14 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "poppins", sans-serif;
+  font-family: "Roboto";
+  font-size: large;
+
+  /* font-family: "poppins", sans-serif; */
 }
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url("bg-4.webp");
+  background-image: url("ch.webp");
   background-size: cover;
   background-position: center;
 }
@@ -23,6 +26,7 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 99;
+  background-color: rgba(206, 192, 156, 0.6);
 }
 .logo {
   font-size: 2rem;

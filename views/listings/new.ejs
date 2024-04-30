@@ -121,15 +121,34 @@
         </div>
     </nav>
     <h3>Create a new listing!</h3>
-    <form action="/listings" method="POST">
-        <input type="text" name="listing[title]" placeholder="Enter the title"><br><br>
-        <textarea name="listing[description]" placeholder="Enter the description"></textarea><br><br>
-        <input type="text" name="listing[image]" placeholder="Enter the image URL/LINK"><br><br>
-        <input type="number" name="listing[price]" placeholder="Enter price"><br><br>
-        <input type="text" name="listing[country]" placeholder="Enter country"><br><br>
-        <input type="text" name="listing[location]" placeholder="Enter location"><br><br>
+    <form action="/listings" method="POST"  onsubmit="return validateForm()" >
+        <input type="text" name="listing[title]" placeholder="Enter the title" required><br><br>
+        <textarea name="listing[description]" placeholder="Enter the description" required></textarea><br><br>
+        <input type="text" name="listing[image]" placeholder="Enter the image URL/LINK" required><br><br>
+        <input type="number" name="listing[price]" placeholder="Enter price" required><br><br>
+        <input type="text" name="listing[country]" placeholder="Enter country" required><br><br>
+        <input type="text" name="listing[location]" placeholder="Enter location" required><br><br>
         <input type="submit" value="Add" class="button">
     </form>
+
+    <script>
+        function validateForm() {
+            const requiredFields = document.querySelectorAll('input[required], textarea[required]');
+            let isValid = true;
+    
+            for (const field of requiredFields) {
+                if (field.value.trim() === '') {
+                    alert('Please fill all the required fields.');
+                    isValid = false;
+                    break;
+                }
+            }
+    
+            return isValid;
+        }
+    </script>
+
+    
 </body>
 
 </html>

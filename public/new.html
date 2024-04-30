@@ -2,16 +2,27 @@
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create a new listing</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
     <style>
+        * {
+            font-family: "Roboto";
+            font-size: large;
+
+        }
+
         body {
             font-family: "Inter", sans-serif;
             font-optical-sizing: auto;
             font-style: normal;
-            background-color: rgb(248, 238, 184);
+            background-color: #d2c196;
             margin: 0;
             padding: 0;
         }
@@ -80,38 +91,41 @@
 
         form {
             max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 50px auto;
+            padding: 40px;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
+            border-radius: 10px;
+            background-color: #f9f9f995;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         input[type="text"],
         input[type="number"],
         textarea {
-            width: calc(100% - 22px);
+            width: 100%;
             padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
             border-radius: 5px;
             box-sizing: border-box;
+            font-size: 14px;
         }
 
         textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 120px;
         }
 
         .button {
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             background-color: #007bff;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
+            transition: background-color 0.3s;
         }
 
         .button:hover {
@@ -132,15 +146,14 @@
             <a href="/listings/new">New Listing</a>
         </nav>
     </header>
-    <!-- <br> -->
     <h1>Create a New Listing</h1>
     <form action="/listings" method="POST">
-        <input type="text" name="listing[title]" placeholder="Enter the title"><br><br>
-        <textarea name="listing[description]" placeholder="Enter the description"></textarea><br><br>
-        <input type="text" name="listing[image]" placeholder="Enter the image URL/LINK"><br><br>
-        <input type="number" name="listing[price]" placeholder="Enter price"><br><br>
-        <input type="text" name="listing[country]" placeholder="Enter country"><br><br>
-        <input type="text" name="listing[location]" placeholder="Enter location"><br><br>
+        <input type="text" name="listing[title]" placeholder="Enter the title">
+        <textarea name="listing[description]" placeholder="Enter the description"></textarea>
+        <input type="text" name="listing[image]" placeholder="Enter the image URL/LINK">
+        <input type="number" name="listing[price]" placeholder="Enter price">
+        <input type="text" name="listing[country]" placeholder="Enter country">
+        <input type="text" name="listing[location]" placeholder="Enter location">
         <input type="submit" value="Add" class="button">
     </form>
 </body>

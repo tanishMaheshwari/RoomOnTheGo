@@ -33,10 +33,6 @@ app.get("/", (req, res) => {
   res.sendFile("index.html", { root: __dirname });
 });
 
-app.get("/listing", (req, res) => {
-  res.sendFile("/public/listings.html", { root: __dirname });
-});
-
 app.get("/listings", async (req, res) => {
   try {
     const alllisting = await Listing.find({});
