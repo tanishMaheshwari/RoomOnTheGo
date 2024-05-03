@@ -70,7 +70,7 @@ header {
   transition: 0.5s;
 }
 .navigation .btnLogin-popup:hover {
-  background: white;
+  background: rgba(0, 0, 0, 0.3);
   color: black;
 }
 .wrapper {

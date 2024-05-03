@@ -38,7 +38,7 @@
             justify-content: space-between;
             align-items: center;
             z-index: 99;
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(206, 192, 156, 0.6);
             border: 1px solid rgba(0, 0, 0, 0.2);
             border-radius: 0px 0px 8px 8px;
         }
@@ -55,6 +55,7 @@
             align-items: center;
             margin-right: 150px;
             float: right;
+            /* background-color: rgba(255, 255, 255, 0.2); */
         }
 
         .navigation a {
@@ -88,6 +89,7 @@
         h1 {
             text-align: center;
             margin-top: 140px;
+            font-size: 150px;
         }
 
         form {
@@ -132,6 +134,34 @@
         .button:hover {
             background-color: #0056b3;
         }
+
+        #welcome-message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .redirect-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .redirect-button:hover {
+            background-color: #000000;
+            color: white;
+        }
     </style>
 
 </head>
@@ -147,18 +177,10 @@
             <a href="/listings/new">New Listing</a>
         </nav>
     </header>
-    <h1 style="font-size: x-large;">Create a New Listing</h1>
-    <form action="/listings" method="POST">
-        <input type="text" name="listing[title]" placeholder="Enter the title">
-        <textarea name="listing[description]" placeholder="Enter the description"></textarea>
-        <input type="text" name="listing[image][url]" placeholder="Enter the image URL/LINK">
-        <input type="text" name="listing[image][filename]" placeholder="Enter the image filename">
-        <input type="number" name="listing[price]" placeholder="Enter price">
-        <input type="text" name="listing[country]" placeholder="Enter country">
-        <input type="text" name="listing[location]" placeholder="Enter location">
-        <input type="submit" value="Add" class="button">
-    </form>
-
+    <div id="welcome-message" style="margin-top: 300px;color: #000000;">
+        <h1>Sorry, try again!</h1>
+    </div>
+    <a href="/" class="redirect-button">Go to Home Page</a>
 </body>
 
 </html>

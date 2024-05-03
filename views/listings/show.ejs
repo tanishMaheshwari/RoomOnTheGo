@@ -7,10 +7,20 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RoomOnTheGo</title>
     <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -157,10 +167,15 @@
             <%= listing.country %>
         </li>
     </ul>
+    <p style="text-align: center;"><span class="material-symbols-outlined">
+            call
+        </span><b>Contact Us: +91 92864756XX </b></p>
     <a href="/listings/<%= listing._id %>/edit" style="display: block; text-align: center;">Edit the listing</a>
     <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST">
         <button>Delete this listing</button>
     </form>
+
+
 </body>
 
 </html>
