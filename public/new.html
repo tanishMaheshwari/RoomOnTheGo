@@ -22,7 +22,8 @@
             font-family: "Inter", sans-serif;
             font-optical-sizing: auto;
             font-style: normal;
-            background-color: #d2c196;
+            /* background-color: #d2c196; */
+            background-image: url("tt.jpeg");
             margin: 0;
             padding: 0;
         }
@@ -142,11 +143,11 @@
         </div>
         <nav class="navigation">
             <a href="/">Home</a>
-            <a href="/listings">All Listings</a>
+            <a href="/listings"><b>All Listings</b></a>
             <a href="/listings/new">New Listing</a>
         </nav>
     </header>
-    <h1>Create a New Listing</h1>
+    <h1 style="font-size: x-large;">Create a New Listing</h1>
     <form action="/listings" method="POST">
         <input type="text" name="listing[title]" placeholder="Enter the title">
         <textarea name="listing[description]" placeholder="Enter the description"></textarea>

@@ -49,6 +49,10 @@ app.get("/listings/logo-3.png", (req, res) => {
   res.sendFile("/public/logo-3.png", { root: __dirname });
 });
 
+app.get("/listings/tt.jpeg", (req, res) => {
+  res.sendFile("/public/tt.jpeg", { root: __dirname });
+});
+
 app.get("/listings/:id", async (req, res) => {
   try {
     let { id } = req.params;
